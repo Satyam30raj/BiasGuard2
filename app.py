@@ -1,6 +1,7 @@
 import os
 import uuid
 import shutil
+os.makedirs("static/charts", exist_ok=True)
 from datetime import datetime
 from typing import Any, Union
 
@@ -270,3 +271,4 @@ def run_bias():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8000, debug=True)
+
