@@ -154,13 +154,13 @@ def results():
         model = models[model_name]
         metrics, group_rates, y_pred = evaluate_bias(model, X_test, y_test, A_test)
 
-       # --- 5. Chart ---
-chart_name = f"chart_{uid}.png"
-chart_path = plot_selection_rates(
-    y_pred,
-    A_test,
-    save_path=os.path.join(REPORT_DIR, chart_name)   # 👈 ab chart reports/ me save hoga
-)
+        # --- 5. Chart ---
+        chart_name = f"chart_{uid}.png"
+        chart_path = plot_selection_rates(
+            y_pred,
+            A_test,
+            save_path=os.path.join(REPORT_DIR, chart_name)   # 👈 ab chart reports/ me save hoga
+        )
         # --- 6. Report ---
         report_name = f"report_{uid}.pdf"
         report_path = os.path.join(REPORT_DIR, report_name)
@@ -271,5 +271,6 @@ def run_bias():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8000, debug=True)
+
 
 
